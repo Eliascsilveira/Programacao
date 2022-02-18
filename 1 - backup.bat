@@ -2,11 +2,11 @@
 @>nul chcp 65001 :: Suporte UTF-8
 @set PATH=%PATH%;"%~dp0lib" :: Driver de letra apenas
 @title Projeto WorkPlace - Parte 1 v.2.0
-@chgcolor 02
+@chgcolor 02 :: verde
 @echo ------------------------------------------------------------------------------
 @echo  Projeto WorkPlace - Parte 1 v.2.1
 @echo ------------------------------------------------------------------------------
-@chgcolor 04
+@chgcolor 04 :: cor vinho
 @echo .########.####.##.....##.####.########
 @echo ....##.....##..##.....##..##.....##...
 @echo ....##.....##..##.....##..##.....##...
@@ -15,20 +15,20 @@
 @echo ....##.....##....##.##....##.....##...
 @echo ....##....####....###....####....##...
 @echo. 
-@chgcolor 46
+@chgcolor 46 :: cor vinho e amarelo
 @echo ## ATENÇÃO - EXECUTAR COM O USUÁRIO LOGADO NO DOMÍNIO PRAXAIR##
 @echo.
-:disco
+:disco 
 @chgcolor 02
 @echo ------------------------------------------------------------------------------
     @echo Discos conectados ao equipamento:
 @echo ------------------------------------------------------------------------------
     @chgcolor 06
-    @WMIC LOGICALDISK where drivetype=3 get deviceid,description
+    @WMIC LOGICALDISK where drivetype=3 get deviceid,description ::Lista os discos conectados no equipamento
     @chgcolor 07
-    @set /p letra= Letra do HD Externo: 
+    @set /p letra= Letra do HD Externo:  ::Qual a letra do HD externo?
     @echo.
-    @if exist %letra%:\ (
+    @if exist %letra%:\ (                :: Valida se é um HD válido
         @if exist %letra%:\Scripts\ (
             @goto nome
         ) else (
@@ -51,11 +51,11 @@
     )
 
 :nome
-    @set /p nome= Nome do Usuário (Sem espaços): 
+    @set /p nome= Nome do Usuário (Sem espaços):   :: Nome da pasta que será criada para realizar o Backpu
     @echo.
 
 :chave
-    @set /p user= Chave Praxair: 
+    @set /p user= Chave Praxair:  :: Qual é a chave Praxair é por esta chave que será feito o backup
     @echo.
     @if exist c:\users\%user%\ (
         goto backup
