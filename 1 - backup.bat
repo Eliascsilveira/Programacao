@@ -51,7 +51,7 @@
     )
 
 :nome
-    @set /p nome= Nome do Usuário (Sem espaços):   :: Nome da pasta que será criada para realizar o Backpu
+    @set /p nome= Nome do Usuário (Sem espaços):   :: Nome da pasta que será criada para realizar o Backup
     @echo.
 
 :chave
